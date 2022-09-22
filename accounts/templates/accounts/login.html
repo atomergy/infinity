@@ -1,0 +1,65 @@
+{% extends "_base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block constructor %}
+    <div class="rn-breadcrumb-inner ptb--30">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-6 col-12">
+                    <h5 class="title text-center text-md-end">{% translate "let's get to know you :)" %}</h5>
+                </div>
+                <div class="col-lg-6 col-md-6 col-12">
+                    <ul class="breadcrumb-list">
+                        <li class="item"><a href="index.html">خانه</a></li>
+                        <li class="separator"><i class="feather-chevron-left"></i></li>
+                        <li class="item current">ورود نورون</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock constructor %}
+
+{% block kernel %}
+    <div class="login-area rn-section-gapTop">
+        <div class="container">
+            <div class="row g-5">
+                <div class=" offset-2 col-lg-4 col-md-6 ml_md--0 ml_sm--0 col-sm-12">
+                    <div class="form-wrapper-one">
+                        <h4>{% translate "Login to System" %}</h4>
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            <div class="mb-5">
+                                <label for="exampleInputEmail1" class="form-label">{% translate "Email Address / Username" %}</label>
+                                <input name="username" type="text" id="exampleInputEmail1">
+                            </div>
+                            <div class="mb-5">
+                                <label for="exampleInputPassword1" class="form-label">{% translate "Password" %}</label>
+                                <input name="password" type="password" id="exampleInputPassword1">
+                            </div>
+                            <div class="mb-5 rn-check-box">
+                                <input name="remember" type="checkbox" class="rn-check-box-input" id="exampleCheck1">
+                                <label class="rn-check-box-label" for="exampleCheck1">{% translate "Remember Me" %}</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary mr--15">{% translate "Login" %}</button>
+                            <a href="sign-up.html" class="btn btn-primary-alta">ثبت نام</a>
+                            </form>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="social-share-media form-wrapper-one">
+                        <h6>{% translate "You can login with other platforms!" %}</h6>
+                        <p>
+                            {% translate "Our platform may be inconvenient for you for any reason. You can do the registration and login process faster with your accounts on other platforms." %}
+                        </p>
+                        <button class="another-login login-facebook"> <img class="small-image" src="{% static 'assets/images/icons/google.png' %}" alt=""> <span>{% translate "Login with Google" %}</span> </button>
+                        <button class="another-login login-facebook"> <img class="small-image" src="{% static 'assets/images/icons/facebook.png' %}" alt=""> <span>{% translate "Login with Facebook" %}</span> </button>
+                        <button class="another-login login-twitter"> <img class="small-image" src="{% static 'assets/images/icons/tweeter.png' %}" alt=""> <span>{% translate "Login with Twitter" %}</span> </button>
+                        <button class="another-login login-linkedin"> <img class="small-image" src="{% static 'assets/images/icons/linkedin.png' %}" alt=""> <span>{% translate "Login with Linkedin" %}</span> </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock kernel %}

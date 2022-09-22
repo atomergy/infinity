@@ -1,0 +1,43 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    {% include 'includes/_meta.html' %}
+
+    <title>
+        {% block title %}
+
+        {% endblock title %}
+    </title>
+
+    {% include 'includes/_theme.html' %}
+
+    {% include 'includes/_styles.html' %}
+</head>
+
+<body class="template-color-1 nft-body-connect">
+
+    {% include 'includes/_header.html' %}
+
+    <!-- start page title area -->
+    {% block constructor %}
+    
+    {% endblock constructor %}
+    <!-- end page title area -->
+
+    <!-- Template Kernel -->
+    {% block kernel %}
+
+    {% endblock kernel %}
+    <!-- Template Kernel end -->
+
+    {% include 'includes/_footer_area.html' %}
+
+    {% include 'includes/_scripts.html' %}
+</body>
+
+
+</html>
