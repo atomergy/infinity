@@ -21,6 +21,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("accounts/", include("accounts.urls")),
+    path("accounts/", include("allauth.urls")),
 ]
 
 # By default, Django not serve the Media Files (In DEBUG==True).
