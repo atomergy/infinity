@@ -1,0 +1,49 @@
+{% extends '_base.html' %}
+{% load static %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+{% translate "Register" %}
+{% endblock title %}
+
+{% block kernel %}
+    <!-- login form -->
+    <div class="login-area rn-section-gapTop">
+        <div class="container">
+            <div class="row g-5">
+                <div class="offset-2 col-lg-4 col-md-6 ml_md--0 ml_sm--0 col-sm-12">
+                    <div class="form-wrapper-one register-area">
+                        <h4>ثبت نام</h4>
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            <div style="color: white;">
+                                <span style="color: white;">
+                                    {{ form|crispy }}
+                                </span>
+                            </div>
+                            <div class="mb-5 rn-check-box">
+                                <input type="checkbox" class="rn-check-box-input" id="exampleCheck1">
+                                <label class="rn-check-box-label" for="exampleCheck1">اجازه به همه گروه ها و
+                                    شرط</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary mr--15">عضویت</button>
+                            <a href="login.html" class="btn btn-primary-alta">ورود به سیستم</a>
+                            </form>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="social-share-media form-wrapper-one">
+                        <h6>روش دیگری برای ثبت نام</h6>
+                        <p> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
+                        <button class="another-login login-facebook"> <img class="small-image" src="assets/images/icons/google.png" alt=""> <span>با گوگل وارد شوید</span> </button>
+                        <button class="another-login login-facebook"> <img class="small-image" src="assets/images/icons/facebook.png" alt=""> <span>با فیس بوک وارد شوید</span> </button>
+                        <button class="another-login login-twitter"> <img class="small-image" src="assets/images/icons/tweeter.png" alt=""> <span>با توییتر وارد شوید</span> </button>
+                        <button class="another-login login-linkedin"> <img class="small-image" src="assets/images/icons/linkedin.png" alt=""> <span>با لینکداین وارد شوید</span> </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- login form end -->
+{% endblock kernel %}
